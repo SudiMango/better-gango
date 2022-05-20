@@ -267,6 +267,9 @@ client.on("messageCreate", async (msg) => {
         }
         client.commands.get("setwelcome").execute(msg, args)
         break
+      case "kick":
+        client.commands.get("kick").execute(msg, args)
+        break
     }
   } catch (error) {
     // Catch error
