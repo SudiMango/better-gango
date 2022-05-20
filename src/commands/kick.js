@@ -3,10 +3,7 @@ module.exports = {
   description: "kick cmd",
   async execute(msg, args) {
     if (!msg.member.permissions.has("KICK_MEMBERS"))
-      return msg.reply("U don't have kick perms retard")
-
-    if (msg.member.permissions.has("ADMINISTRATOR"))
-      return msg.reply("That person has admin, I can't kick them")
+      return msg.reply("U don't have kick perms bozo 😂")
 
     if (args.length === 1) {
       msg.reply("You didn't tell me who to kick bruh 💀")
@@ -26,6 +23,12 @@ module.exports = {
       let targetMember = msg.guild.members.cache.get(target.id)
 
       if (!targetMember) return msg.reply("User not found")
+
+      if (target.id === msg.author.id)
+        return msg.reply("U wanna kick yourself 🤨")
+
+      if (targetMember.permissions.has("ADMINISTRATOR"))
+        return msg.reply("That person has admin, I can't kick them")
 
       await targetMember.kick()
       if (!reason) {

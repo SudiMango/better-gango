@@ -270,6 +270,12 @@ client.on("messageCreate", async (msg) => {
       case "kick":
         client.commands.get("kick").execute(msg, args)
         break
+      case "ban":
+        client.commands.get("ban").execute(msg, args, client)
+        break
+      case "unban":
+        client.commands.get("unban").execute(msg, args, client)
+        break
     }
   } catch (error) {
     // Catch error
