@@ -5,6 +5,9 @@ module.exports = {
     if (!msg.member.permissions.has("KICK_MEMBERS"))
       return msg.reply("U don't have kick perms retard")
 
+    if (msg.member.permissions.has("ADMINISTRATOR"))
+      return msg.reply("That person has admin, I can't kick them")
+
     if (args.length === 1) {
       msg.reply("You didn't tell me who to kick bruh 💀")
       return
