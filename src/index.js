@@ -116,6 +116,12 @@ client.on("messageCreate", async (msg) => {
     }
   }
 
+  if (msg.content.includes("💀")) {
+    msg.reply(
+      "https://cdn.discordapp.com/attachments/974576242055577620/977457066362953779/6spq6nB7q7.gif"
+    )
+  }
+
   // Auto reactions in show off channel
   let showOffChannel = "972777349105991704"
 
@@ -271,7 +277,7 @@ client.on("messageCreate", async (msg) => {
         client.commands.get("kick").execute(msg, args)
         break
       case "ban":
-        client.commands.get("ban").execute(msg, args, client)
+        client.commands.get("ban").execute(msg, args)
         break
       case "unban":
         client.commands.get("unban").execute(msg, args, client)

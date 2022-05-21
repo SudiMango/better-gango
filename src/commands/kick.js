@@ -1,6 +1,7 @@
 module.exports = {
   name: "kick",
   description: "kick cmd",
+  type: "admin",
   async execute(msg, args) {
     if (!msg.member.permissions.has("KICK_MEMBERS"))
       return msg.reply("U don't have kick perms bozo 😂")
@@ -11,30 +12,60 @@ module.exports = {
     }
 
     let reasonTable = args.splice(2)
-    let reason = reasonTable.join(" ")
+    let kickReason = reasonTable.join(" ")
 
-    console.log(reason)
+    console.log(kickReason)
 
-    let target = msg.mentions.users.first()
+    let target = args[1]
 
-    if (!target) return msg.reply("Please tag a user")
+    if (!target) return msg.reply("User not found")
 
-    if (target) {
-      let targetMember = msg.guild.members.cache.get(target.id)
+    if (target.startsWith("<@") && target.endsWith(">")) {
+      try {
+        let new1 = target.replace("<@", "")
+        let new2 = new1.replace(">", "")
+        let targetMember = await msg.guild.members.fetch(new2)
 
-      if (!targetMember) return msg.reply("User not found")
+        if (new2 === msg.author.id) return msg.reply("U wanna kick yourself 🤨")
 
-      if (target.id === msg.author.id)
-        return msg.reply("U wanna kick yourself 🤨")
+        if (targetMember.permissions.has("ADMINISTRATOR"))
+          return msg.reply("That person has admin, I can't kick them")
 
-      if (targetMember.permissions.has("ADMINISTRATOR"))
-        return msg.reply("That person has admin, I can't kick them")
+        await targetMember.kick()
+        if (!kickReason) {
+          return msg.reply(
+            `${targetMember.user.tag} has been kicked. Reason: None`
+          )
+        } else {
+          return msg.reply(
+            `${targetMember.user.tag} has been kicked. Reason: ${kickReason}`
+          )
+        }
+      } catch (err) {
+        return msg.reply("User not found")
+      }
+    } else {
+      try {
+        let targetMember = await msg.guild.members.fetch(target)
 
-      await targetMember.kick()
-      if (!reason) {
-        return msg.reply(`${target} has been kicked. Reason: None`)
-      } else {
-        return msg.reply(`${target} has been kicked. Reason: ${reason}`)
+        if (target === msg.author.id)
+          return msg.reply("U wanna kick yourself 🤨")
+
+        if (targetMember.permissions.has("ADMINISTRATOR"))
+          return msg.reply("That person has admin, I can't kick them")
+
+        await targetMember.kick()
+        if (!kickReason) {
+          return msg.reply(
+            `${targetMember.user.tag} has been kicked. Reason: None`
+          )
+        } else {
+          return msg.reply(
+            `${targetMember.user.tag} has been kicked. Reason: ${kickReason}`
+          )
+        }
+      } catch (err) {
+        return msg.reply("User not found")
       }
     }
   },

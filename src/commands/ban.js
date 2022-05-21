@@ -1,7 +1,7 @@
 module.exports = {
   name: "ban",
   description: "ban cmd",
-  async execute(msg, args, client) {
+  async execute(msg, args) {
     if (!msg.member.permissions.has("BAN_MEMBERS"))
       return msg.reply("U don't have ban perms bozo 😂")
 
@@ -15,36 +15,39 @@ module.exports = {
 
     console.log(banReason)
 
-    let targetByMention = msg.mentions.users.first()
+    let target = args[1]
 
-    if (targetByMention) {
-      let targetMember = msg.guild.members.cache.get(targetByMention.id)
+    if (!target) return msg.reply("User not found")
 
-      console.log(targetMember)
-
-      if (!targetMember) return msg.reply("User not found")
-
-      if (targetByMention.id === msg.author.id)
-        return msg.reply("U wanna ban yourself 🤨")
-
-      if (targetMember.permissions.has("ADMINISTRATOR"))
-        return msg.reply("That person has admin, I can't ban them")
-
-      await targetMember.ban({ reason: banReason })
-      if (!banReason) {
-        return msg.reply(
-          `${targetMember.user.tag} has been banned. Reason: None`
-        )
-      } else {
-        return msg.reply(
-          `${targetMember.user.tag} has been banned. Reason: ${banReason}`
-        )
-      }
-    } else if (!targetByMention) {
+    if (target.startsWith("<@") && target.endsWith(">")) {
       try {
-        let targetMember = await msg.guild.members.fetch(args[1])
+        let new1 = target.replace("<@", "")
+        let new2 = new1.replace(">", "")
+        let targetMember = await msg.guild.members.fetch(new2)
 
-        if (args[1] === msg.author.id)
+        if (new2 === msg.author.id) return msg.reply("U wanna ban yourself 🤨")
+
+        if (targetMember.permissions.has("ADMINISTRATOR"))
+          return msg.reply("That person has admin, I can't ban them")
+
+        await targetMember.ban({ reason: banReason })
+        if (!banReason) {
+          return msg.reply(
+            `${targetMember.user.tag} has been banned. Reason: None`
+          )
+        } else {
+          return msg.reply(
+            `${targetMember.user.tag} has been banned. Reason: ${banReason}`
+          )
+        }
+      } catch (err) {
+        return msg.reply("User not found")
+      }
+    } else {
+      try {
+        let targetMember = await msg.guild.members.fetch(target)
+
+        if (target === msg.author.id)
           return msg.reply("U wanna ban yourself 🤨")
 
         if (targetMember.permissions.has("ADMINISTRATOR"))
@@ -61,7 +64,7 @@ module.exports = {
           )
         }
       } catch (err) {
-        msg.reply("User not found")
+        return msg.reply("User not found")
       }
     }
   },
