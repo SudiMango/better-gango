@@ -16,6 +16,9 @@ module.exports = {
       try {
         let fetchBans = await msg.guild.bans.fetch()
 
+        if (fetchBans.size === 0)
+          return msg.reply("No banned users in this server.")
+
         fetchBans.forEach((banned) => {
           if (banned.user.id === target) {
             let reasonTable = args.splice(2)

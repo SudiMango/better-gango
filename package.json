@@ -7,7 +7,6 @@
 		"axios": "^0.27.2",
 		"colors": "^1.4.0",
 		"discord.js": "^13.6.0",
-		"discord.js-commando": "^0.12.3",
 		"dotenv": "^16.0.0",
 		"mongoose": "^6.3.3"
 	},
