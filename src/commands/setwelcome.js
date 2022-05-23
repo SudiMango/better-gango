@@ -4,6 +4,9 @@ module.exports = {
   name: "setwelcome",
   description: "setwelcome message",
   async execute(msg, args) {
+    if (!msg.member.permissions.has("ADMINISTRATOR"))
+      return msg.reply("U don't have admin perms bozo 😂")
+
     const welcomeConfig = await welcomeSchema.findOne({ GuildID: msg.guildId })
     if (args.length === 1) {
       if (!welcomeConfig) {

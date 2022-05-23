@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js")
-const helpConfigs = require("../database/helpconfig.json")
+const helpConfigs = require("../json-files/helpconfig.json")
 
 module.exports = {
   name: "help",

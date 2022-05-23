@@ -4,6 +4,9 @@ module.exports = {
   name: "bannedwords",
   description: "banned words cmd",
   async execute(msg, args, bannedWords) {
+    if (!msg.member.permissions.has("ADMINISTRATOR"))
+      return msg.reply("U don't have admin perms bozo 😂")
+
     const configFile = schema.findOne({ GuildID: msg.guildId })
 
     switch (args.length) {

@@ -4,6 +4,9 @@ module.exports = {
   name: "unmute",
   description: "unmute cmd",
   async execute(msg, args, muteRole) {
+    if (!msg.member.permissions.has("ADMINISTRATOR"))
+      return msg.reply("U don't have admin perms bozo 😂")
+
     const configFile = schema.findOne({ GuildID: msg.guildId })
 
     switch (args.length) {

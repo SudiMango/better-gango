@@ -4,6 +4,9 @@ module.exports = {
   name: "embed",
   description: "embed cmd",
   execute(msg, args, author) {
+    if (!msg.member.permissions.has("ADMINISTRATOR"))
+      return msg.reply("U don't have admin perms bozo 😂")
+
     switch (args.length) {
       case 1:
         const newEmbed = new MessageEmbed()

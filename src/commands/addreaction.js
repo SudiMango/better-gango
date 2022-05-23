@@ -2,6 +2,9 @@ module.exports = {
   name: "addreaction",
   description: "manual reaction role cmd",
   async execute(msg, args) {
+    if (!msg.member.permissions.has("ADMINISTRATOR"))
+      return msg.reply("U don't have admin perms bozo 😂")
+
     if (!args[1])
       return msg.reply(
         "You need to provide all the arguments *(eg. channelID,messageID,emoji,roleID(optional))*"

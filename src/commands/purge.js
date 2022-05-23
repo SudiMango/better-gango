@@ -2,6 +2,9 @@ module.exports = {
   name: "purge",
   description: "purge cmd",
   async execute(msg, args) {
+    if (!msg.member.permissions.has("MANAGE_MESSAGES"))
+      return msg.reply("U don't have perms to manage messages bozo 😂")
+
     switch (args.length) {
       case 1:
         msg.reply(

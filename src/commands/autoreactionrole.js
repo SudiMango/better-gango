@@ -4,6 +4,9 @@ module.exports = {
   name: "rrauto",
   description: "auto reaction role cmd",
   async execute(msg, args, client) {
+    if (!msg.member.permissions.has("ADMINISTRATOR"))
+      return msg.reply("U don't have admin perms bozo 😂")
+
     switch (args.length) {
       case 1:
         const reactionEmbed1 = new MessageEmbed()
