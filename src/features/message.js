@@ -103,10 +103,10 @@ module.exports = async (msg, client) => {
         client.commands.get("demotivate").execute(msg, args)
         break
       case "stalker":
-        client.commands.get("stalker").execute(msg, args)
+        client.commands.get("stalker").execute(msg, args, client)
         break
       case "8ball":
-        client.commands.get("8ball").execute(msg, args)
+        client.commands.get("8ball").execute(msg, args, client)
         break
       case "meme":
         client.commands.get("meme").execute(msg, args, client)
@@ -117,7 +117,9 @@ module.exports = async (msg, client) => {
 
       // Calling admin commands
       case "bannedwords":
-        client.commands.get("bannedwords").execute(msg, args, bannedWords)
+        client.commands
+          .get("bannedwords")
+          .execute(msg, args, client, bannedWords)
         break
       case "addreaction":
         client.commands.get("addreaction").execute(msg, args)
@@ -129,22 +131,22 @@ module.exports = async (msg, client) => {
         client.commands.get("embed").execute(msg, args, msg.author.tag)
         break
       case "purge":
-        client.commands.get("purge").execute(msg, args)
+        client.commands.get("purge").execute(msg, args, client)
         break
       case "mute":
-        client.commands.get("mute").execute(msg, args, muteRole)
+        client.commands.get("mute").execute(msg, args, muteRole, client)
         break
       case "unmute":
-        client.commands.get("unmute").execute(msg, args, muteRole)
+        client.commands.get("unmute").execute(msg, args, muteRole, client)
         break
       case "setwelcome":
-        client.commands.get("setwelcome").execute(msg, args)
+        client.commands.get("setwelcome").execute(msg, args, client)
         break
       case "kick":
-        client.commands.get("kick").execute(msg, args)
+        client.commands.get("kick").execute(msg, args, client)
         break
       case "ban":
-        client.commands.get("ban").execute(msg, args)
+        client.commands.get("ban").execute(msg, args, client)
         break
       case "unban":
         client.commands.get("unban").execute(msg, args, client)

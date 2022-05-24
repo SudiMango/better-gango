@@ -1,10 +1,15 @@
 const { MessageEmbed } = require("discord.js")
-const helpConfigs = require("../json-files/helpconfig.json")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "help",
-  description: "help cmd",
+  description: "Lets you access the better gango help docs",
+  type: "simple",
   async execute(msg, args, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     switch (args.length) {
       case 1:
         const firstPage = new MessageEmbed()
@@ -39,17 +44,18 @@ module.exports = {
           .addFields(
             {
               name: "Simple commands",
-              value: "List of simple commands that better gango offers\nㅤ",
+              value:
+                "List of simple commands that better gango offers. **Type `;{command name}` for more info about the command.**\nㅤ",
               inline: false,
             },
             {
               name: ";help",
-              value: "Lets you access the better gango help docs",
+              value: "Lets you access the better gango help docs.",
               inline: false,
             },
-            { name: ";ping", value: "Responds with pong", inline: false },
-            { name: ";bing", value: "Responds with bong", inline: false },
-            { name: ";beep", value: "Responds with boop\nㅤ", inline: false }
+            { name: ";ping", value: "Responds with pong.", inline: false },
+            { name: ";bing", value: "Responds with bong.", inline: false },
+            { name: ";beep", value: "Responds with boop.\nㅤ", inline: false }
           )
           .addField(
             "**Advanced commands**",
@@ -70,7 +76,8 @@ module.exports = {
           .addFields(
             {
               name: "Advanced commands",
-              value: "List of advanced commands that better gango offers\nㅤ",
+              value:
+                "List of advanced commands that better gango offers. **Type `;help {command name}` for more info about the command.**\nㅤ",
               inline: false,
             },
             {
@@ -79,15 +86,14 @@ module.exports = {
               inline: false,
             },
             {
-              name: ";bruh",
+              name: ";stalker",
               value:
-                "Tells you your age, gender, and where you live *(has 3 args => (age,gender,place))*",
+                "Creep someone out by telling them their age, gender, and living place anonymously!",
               inline: false,
             },
             {
               name: ";8ball",
-              value:
-                "Predict your future using this command! *(has 1 arg => (question))*",
+              value: "Make the bot answer a yes or no question for you!",
               inline: false,
             },
             {
@@ -115,25 +121,24 @@ module.exports = {
           .addFields(
             {
               name: "Admin commands",
-              value: "List of admin commands that better gango offers\nㅤ",
+              value:
+                "List of admin commands that better gango offers. **Type `;help {command name}` for more info about the command.**\nㅤ",
               inline: false,
             },
             {
               name: ";prefix",
-              value:
-                "Check/change the prefix for the bot *(has 2 args => (set,prefix))*",
+              value: "Check/change the prefix for the bot.",
               inline: false,
             },
             {
               name: ";bannedwords",
-              value:
-                "Lets you ban words in your server *(has 2 args => (add/remove/list,word))*",
+              value: "Lets you ban words in your server.",
               inline: false,
             },
             {
               name: ";addreaction",
               value:
-                "Adds reactions/reaction role to any message that you want *(has 4 args => (channelID,messageID,emoji,roleID(optional)))*",
+                "Adds reactions/reaction role to any message that you want.",
               inline: false,
             },
             {
@@ -148,19 +153,32 @@ module.exports = {
             },
             {
               name: ";purge",
-              value:
-                "Lets you purge messages *(has 1 arg => (number: 1<number<100))*",
+              value: "Lets you purge messages.",
               inline: false,
             },
             {
               name: ";mute",
-              value:
-                "Lets you mute members *(has 2 args => (@member, time(optional))*",
+              value: "Lets you mute members of the server.",
               inline: false,
             },
             {
               name: ";unmute",
-              value: "Lets you mute members *(has 1 arg => (@member))*\nㅤ",
+              value: "Lets you unmute muted members of the server.\nㅤ",
+              inline: false,
+            },
+            {
+              name: ";kick",
+              value: "Lets you kick members of the server.\nㅤ",
+              inline: false,
+            },
+            {
+              name: ";ban",
+              value: "Lets you ban members of the server.\nㅤ",
+              inline: false,
+            },
+            {
+              name: ";unban",
+              value: "Lets you unban banned members of the server.\nㅤ",
               inline: false,
             }
           )
@@ -216,38 +234,7 @@ module.exports = {
         })
         break
       case 2:
-        if (args[1]) {
-          let findCmd = helpConfigs[args[1]]
-          if (!findCmd) return msg.reply("that aint a command bruh 💀")
-          let cmdEmbed = new MessageEmbed()
-            .setTitle(findCmd.title)
-            .setDescription(findCmd.usage)
-            .addField(findCmd.exampleTitle, findCmd.exampleField, true)
-            .setImage(findCmd?.image)
-            .setColor("#FFFF00")
-            .setFooter({
-              text: client.user.tag,
-              iconURL:
-                "https://cdn.discordapp.com/attachments/972777349105991704/973143133263134770/imcool.jpeg",
-            })
-            .setTimestamp()
-          if (findCmd.exampleTitle2 && findCmd.exampleField2) {
-            cmdEmbed.addField(
-              findCmd.exampleTitle2,
-              findCmd.exampleField2,
-              true
-            )
-          }
-          if (findCmd.exampleTitle3 && findCmd.exampleField3) {
-            cmdEmbed.addField(
-              findCmd.exampleTitle3,
-              findCmd.exampleField3,
-              true
-            )
-          }
-
-          await msg.channel.send({ embeds: [cmdEmbed] })
-        }
+        await dictionary.AdvHelp(client, msg.channel, args[1], msg)
         break
       default:
         msg.reply("that aint a command bruh 💀")

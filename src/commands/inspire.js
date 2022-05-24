@@ -1,4 +1,5 @@
 const axios = require("axios")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "inspire",
@@ -16,7 +17,11 @@ module.exports = {
       })
   },
 
-  execute(msg, args) {
+  async execute(msg, args) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     switch (args.length) {
       case 1:
         module.exports.func().then((res) => {

@@ -1,10 +1,15 @@
 const schema = require("../database/guildConfig.js")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "prefix",
   description: "Check and change bot prefix",
 
   async execute(msg, args, prefix) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     const configFile = schema.findOne({ GuildID: msg.guildId })
 
     if (args.length === 1) {

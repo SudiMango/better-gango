@@ -1,7 +1,13 @@
+const dictionary = require("../features/dictionary.js")
+
 module.exports = {
   name: "ping",
   description: "ping cmd",
-  execute(msg, args, client) {
+  async execute(msg, args, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     switch (args.length) {
       case 1:
         msg.reply(

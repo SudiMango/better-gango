@@ -1,9 +1,14 @@
 const schema = require("../database/guildConfig.js")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "unmute",
   description: "unmute cmd",
-  async execute(msg, args, muteRole) {
+  async execute(msg, args, muteRole, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     if (!msg.member.permissions.has("ADMINISTRATOR"))
       return msg.reply("U don't have admin perms bozo 😂")
 
@@ -11,7 +16,7 @@ module.exports = {
 
     switch (args.length) {
       case 1:
-        msg.reply("You didn't tell me who to unmute bruh 💀")
+        await dictionary.AdvHelp(client, msg.channel, args[0], msg)
         break
       case 2:
         let target = msg.mentions.users.first()

@@ -1,12 +1,16 @@
+const dictionary = require("../features/dictionary.js")
+
 module.exports = {
   name: "stalker",
   description: "stalker cmd",
-  execute(msg, args) {
+  async execute(msg, args, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     switch (args.length) {
       case 1:
-        msg.reply(
-          "You need to provide the 3 arguments *(eg. ;stalker 16 male Ethiopia @user)*"
-        )
+        await dictionary.AdvHelp(client, msg.channel, args[0], msg)
         break
       case 2:
         msg.reply(
@@ -31,7 +35,7 @@ module.exports = {
         let targetMember = msg.guild.members.cache.get(target.id)
 
         msg.channel.send(
-          ` ${targetMember} So you are a ${args[1]} year old ${args[2]} living in ${args[3]} 😈`
+          `${targetMember} So you are a ${args[1]} year old ${args[2]} living in ${args[3]} 😈`
         )
         break
       default:

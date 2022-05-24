@@ -1,10 +1,15 @@
 const fetch = require("node-fetch")
 const { MessageEmbed } = require("discord.js")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "meme",
   description: "meme cmd",
   async execute(msg, args) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     switch (args.length) {
       case 1:
         let data = await fetch(

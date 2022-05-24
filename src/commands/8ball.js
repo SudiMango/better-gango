@@ -1,10 +1,17 @@
+const dictionary = require("../features/dictionary.js")
+
 module.exports = {
   name: "8ball",
   description: "8ball cmd",
-  execute(msg, args) {
+  type: "advanced",
+  async execute(msg, args, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     switch (args.length) {
       case 1:
-        msg.reply("u forgor to ask me a question 💀")
+        await dictionary.AdvHelp(client, msg.channel, args[0], msg)
         break
       default:
         let replies = [

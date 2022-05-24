@@ -1,14 +1,21 @@
+const dictionary = require("../features/dictionary.js")
+
 module.exports = {
   name: "ban",
   description: "ban cmd",
-  async execute(msg, args) {
-    if (!msg.member.permissions.has("BAN_MEMBERS"))
-      return msg.reply("U don't have ban perms bozo 😂")
+  type: "admin",
+  async execute(msg, args, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
 
     if (args.length === 1) {
-      msg.reply("You didn't tell me who to ban bruh 💀")
+      await dictionary.AdvHelp(client, msg.channel, args[0], msg)
       return
     }
+
+    if (!msg.member.permissions.has("BAN_MEMBERS"))
+      return msg.reply("U don't have ban perms bozo 😂")
 
     let reasonTable = args.splice(2)
     let banReason = reasonTable.join(" ")

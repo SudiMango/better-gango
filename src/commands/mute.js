@@ -1,17 +1,22 @@
 const ms = require("ms")
 const schema = require("../database/guildConfig.js")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "mute",
   description: "mute cmd",
-  async execute(msg, args, muteRole) {
+  async execute(msg, args, muteRole, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     if (!msg.member.permissions.has("ADMINISTRATOR"))
       return msg.reply("U don't have admin perms bozo 😂")
 
     const configFile = schema.findOne({ GuildID: msg.guildId })
 
     if (args.length === 1) {
-      msg.reply("You didn't tell me who to mute bruh 💀")
+      await dictionary.AdvHelp(client, msg.channel, args[0], msg)
       return
     }
 

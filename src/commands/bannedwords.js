@@ -1,9 +1,15 @@
 const schema = require("../database/guildConfig.js")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "bannedwords",
   description: "banned words cmd",
-  async execute(msg, args, bannedWords) {
+  type: "admin",
+  async execute(msg, args, client, bannedWords) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     if (!msg.member.permissions.has("ADMINISTRATOR"))
       return msg.reply("U don't have admin perms bozo 😂")
 
@@ -11,22 +17,19 @@ module.exports = {
 
     switch (args.length) {
       case 1:
-        if (!bannedWords.length)
-          return msg.reply("No words banned in this server.")
-
-        msg.reply(
-          `Banned words list: *${configFile.BannedWords ?? bannedWords}*`
-        )
+        if (!bannedWords.length) {
+          msg.reply("No words banned in this server.")
+        } else {
+          msg.reply(
+            `Banned words list: *${configFile.BannedWords ?? bannedWords}*`
+          )
+        }
         break
       case 2:
         if (args[1] === "add") {
           msg.reply("no words given to add")
         } else if (args[1] === "remove") {
           msg.reply("no words given to remove")
-        } else if (args[1] === "list") {
-          msg.reply(
-            `Banned words list: *${configFile.BannedWords ?? bannedWords}*`
-          )
         } else {
           return
         }

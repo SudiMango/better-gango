@@ -1,15 +1,19 @@
+const dictionary = require("../features/dictionary.js")
+
 module.exports = {
   name: "purge",
   description: "purge cmd",
-  async execute(msg, args) {
+  async execute(msg, args, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     if (!msg.member.permissions.has("MANAGE_MESSAGES"))
       return msg.reply("U don't have perms to manage messages bozo 😂")
 
     switch (args.length) {
       case 1:
-        msg.reply(
-          "You didn't enter the amount of messages that u wanna clear bozo"
-        )
+        await dictionary.AdvHelp(client, msg.channel, args[0], msg)
         break
       case 2:
         if (isNaN(args[1]))

@@ -1,9 +1,14 @@
 const welcomeSchema = require("../database/welcome-config.js")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "setwelcome",
   description: "setwelcome message",
   async execute(msg, args) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     if (!msg.member.permissions.has("ADMINISTRATOR"))
       return msg.reply("U don't have admin perms bozo 😂")
 

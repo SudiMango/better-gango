@@ -1,29 +1,29 @@
 {
     "ping": {
         "title": "**Command  ||  ;ping**\n----------------------------------------",
-        "usage": "**Usage:**\n- Check the bot's latency and the Discord API's latency.\nㅤ",
+        "usage": "**Usage:**\n- Check the bot's latency and the Discord API's latency.\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;ping`\nㅤ\n**Example:**",
-        "exampleTitle2": "ㅤ",
-        "exampleField2": "`;ping pong`\nㅤ",
+        "exampleField": "`;ping`",
+        "exampleTitle2": "\u200b",
+        "exampleField2": "`;ping pong`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976394767669796914/unknown.png"
     },
     "bing": {
         "title": "**Command  ||  ;bing**\n----------------------------------------",
-        "usage": "**Usage:**\n- Have a little fun with this command where the bot responds to you!\nㅤ",
+        "usage": "**Usage:**\n- Have a little fun with this command where the bot responds to you!\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;bing`\nㅤ\n**Example:**",
-        "exampleTitle2": "ㅤ",
-        "exampleField2": "`;bing bong`\nㅤ",
+        "exampleField": "`;bing`",
+        "exampleTitle2": "\u200b",
+        "exampleField2": "`;bing bong`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976394945818689536/unknown.png"
     },
     "beep": {
         "title": "**Command  ||  ;beep**\n----------------------------------------",
-        "usage": "**Usage:**\n- Have a little fun with this command where the bot responds to you!\nㅤ",
+        "usage": "**Usage:**\n- Have a little fun with this command where the bot responds to you!\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;beep`\nㅤ\n**Example:**",
-        "exampleTitle2": "ㅤ",
-        "exampleField2": "`;beep boop`\nㅤ",
+        "exampleField": "`;beep`",
+        "exampleTitle2": "\u200b",
+        "exampleField2": "`;beep boop`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976408971885834280/unknown.png"
     },
 
@@ -31,37 +31,37 @@
 
     "inspire": {
         "title": "**Command  ||  ;inspire**\n----------------------------------------",
-        "usage": "**Usage:**\n- Inspire yourself with an inspirational quote sent by the bot!\nㅤ",
+        "usage": "**Usage:**\n- Inspire yourself with an inspirational quote sent by the bot!\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;inspire`\nㅤ\n**Example:**",
+        "exampleField": "`;inspire`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976409148226949172/unknown.png"
     },
     "demotivate": {
         "title": "**Command  ||  ;demotivate**\n----------------------------------------",
-        "usage": "**Usage:**\n- Demotivate yourself with a demotivational quote sent by the bot :(\nㅤ",
+        "usage": "**Usage:**\n- Demotivate yourself with a demotivational quote sent by the bot :(\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;demotivate`\nㅤ\n**Example:**",
+        "exampleField": "`;demotivate`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976409339273306112/unknown.png"
     },
     "8ball": {
         "title": "**Command  ||  ;8ball**\n----------------------------------------",
-        "usage": "**Usage:**\n- Use this command to make the answer a yes or no question for you!\nㅤ",
+        "usage": "**Usage:**\n- Use this command to make the bot answer a yes or no question for you!\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;8ball {question}`\nㅤ\n**Example:**",
+        "exampleField": "`;8ball {question}`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976409520035233822/unknown.png"
     },
     "stalker": {
         "title": "**Command  ||  ;stalker**\n----------------------------------------",
-        "usage": "**Usage:**\n- Creep someone out 👀\nㅤ",
+        "usage": "**Usage:**\n- Creep someone out 👀\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;stalker {age} {gender} {place} {@user}`\nㅤ\n**Example:**",
+        "exampleField": "`;stalker {age} {gender} {place} {@user}`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976410195225870346/unknown.png"
     },
     "meme": {
         "title": "**Command  ||  ;meme**\n----------------------------------------",
-        "usage": "**Usage:**\n- Get a random meme from the r/dankmemes subreddit!\nㅤ",
+        "usage": "**Usage:**\n- Get a random meme from the r/dankmemes subreddit!\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;meme`\nㅤ\n**Example:**",
+        "exampleField": "`;meme`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974208537347624993/976387041812185088/unknown.png"
     },
 
@@ -69,45 +69,88 @@
 
     "prefix": {
         "title": "**Command  ||  ;prefix**\n----------------------------------------",
-        "usage": "**Usage:**\n- Check the prefix for this bot\n- Change prefix of of the bot\nㅤ",
+        "usage": "**Usage:**\n- Check the prefix for this bot\n- Change prefix of of the bot\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;prefix`\nㅤ\n**Example:**",
-        "exampleTitle2": "ㅤ",
-        "exampleField2": "`;prefix set {prefix}`\nㅤ",
-        "image": "https://cdn.discordapp.com/attachments/974576242055577620/976391247390449724/unknown.png"
+        "exampleField": "`;prefix`",
+        "exampleTitle2": "\u200b",
+        "exampleField2": "`;prefix set {prefix}`\n\u200b",
+        "image": "https://cdn.discordapp.com/attachments/974576242055577620/978207189242114099/unknown.png"
     },
     "purge": {
         "title": "**Command  ||  ;purge**\n----------------------------------------",
-        "usage": "**Usage:**\n- Bulk delete messages (upto 100 at a time)\nㅤ",
+        "usage": "**Usage:**\n- Bulk delete messages (upto 100 at a time)\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;purge {number}`\nㅤ\n**Example:**",
-        "image": "https://cdn.discordapp.com/attachments/974576242055577620/976393890506616842/unknown.png"
+        "exampleField": "`;purge {number}`\n\u200b",
+        "image": "https://cdn.discordapp.com/attachments/974640861801484299/978545274677002240/unknown.png"
     },
     "bannedwords": {
         "title": "**Command  ||  ;bannedwords**\n----------------------------------------",
-        "usage": "**Usage:**\n- Ban certain words in you server\nㅤ",
-        "exampleTitle": "Example:",
-        "exampleField": "`;bannedwords add {word}`\nㅤ\n`;bannedwords`\nㅤ\n**Example:**",
-        "exampleTitle2": "ㅤ",
-        "exampleField2": "`;bannedwords remove {word}`\nㅤ",
+        "usage": "**Usage:**\n- Ban certain words in you server\n\u200b",
+        "exampleTitle": "Commands:",
+        "exampleField": "`;bannedwords add {word}`",
+        "exampleTitle2": "\u200b",
+        "exampleField2": "`;bannedwords remove {word}`",
+        "exampleTitle3": "\u200b",
+        "exampleField3": "`;bannedwords`\n\u200b",
+        "inline": false,
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976431349718220810/unknown.png"
     },
     "mute": {
         "title": "**Command  ||  ;mute**\n----------------------------------------",
-        "usage": "**Usage:**\n- Mute people in server\n- Set muted role in server\nㅤ",
+        "usage": "**Usage:**\n- Mute people in server\n- Set muted role in server\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;mute {@user}`\nㅤ\n`;mute {@user} {time}`\nㅤ",
+        "exampleField": "`;mute {@user}`\n\u200b\n`;mute {@user} {time}`\n\u200b",
         "exampleTitle2": "Set/check muted role:",
-        "exampleField2": "`;mute set {@role}`\nㅤ\n`;mute role`",
+        "exampleField2": "`;mute set {@role}`\n\u200b\n`;mute role`\n\u200b",
         "exampleTitle3": "Mute time syntax:",
-        "exampleField3": "`{s = seconds}\n{m = minutes}\n{h = hours}\n{d = days}\n{y = years}`",
+        "exampleField3": "`{s = seconds}\n{m = minutes}\n{h = hours}\n{d = days}\n{y = years}`\n\u200b",
+        "inline": true,
         "image": "https://cdn.discordapp.com/attachments/974640861801484299/976504402632396820/unknown.png"
     },
     "unmute": {
         "title": "**Command  ||  ;unmute**\n----------------------------------------",
-        "usage": "**Usage:**\n- Unmute muted members\nㅤ",
+        "usage": "**Usage:**\n- Unmute muted members in server\n\u200b",
         "exampleTitle": "Commands:",
-        "exampleField": "`;unmute {@user}`\nㅤ\n**Example:**",
+        "exampleField": "`;unmute {@user}`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974640861801484299/976719437174566912/unknown.png"
+    },
+    "ban": {
+        "title": "**Command  ||  ;ban**\n----------------------------------------",
+        "usage": "**Usage:**\n- Ban members in server\n\u200b",
+        "exampleTitle": "Commands:",
+        "exampleField": "`;ban {@user/userID}`",
+        "exampleTitle2": "\u200b",
+        "exampleField2": "`;ban {@user/userID} {reason}`\n\u200b",
+        "image": "https://cdn.discordapp.com/attachments/974576242055577620/978209829036359750/unknown.png"
+    },
+    "unban": {
+        "title": "**Command  ||  ;unban**\n----------------------------------------",
+        "usage": "**Usage:**\n- Unban banned members in server\n\u200b",
+        "exampleTitle": "Commands:",
+        "exampleField": "`;unban {userID}`",
+        "exampleTitle2": "\u200b",
+        "exampleField2": "`;unban {userID} {reason}`\n\u200b",
+        "image": "https://cdn.discordapp.com/attachments/974576242055577620/978210151406374962/unknown.png"
+    },
+    "kick": {
+        "title": "**Command  ||  ;kick**\n----------------------------------------",
+        "usage": "**Usage:**\n- Kick members in server\n\u200b",
+        "exampleTitle": "Commands:",
+        "exampleField": "`;kick {@user/userID}`",
+        "exampleTitle2": "\u200b",
+        "exampleField2": "`;kick {@user/userID} {reason}`\n\u200b",
+        "image": "https://cdn.discordapp.com/attachments/974576242055577620/978212976228179988/unknown.png"
+    },
+    "setwelcome": {
+        "title": "**Command  ||  ;setwelcome**\n----------------------------------------",
+        "usage": "**Usage:**\n- Send welcome message\n- Set welcome channel in server\n\u200b",
+        "exampleTitle": "Enable/disable:",
+        "exampleField": "`;setwelcome enable`\n\u200b\n`;setwelcome disable`\n\u200b",
+        "exampleTitle2": "Change channel:",
+        "exampleField2": "`;setwelcome {#channel}`",
+        "exampleTitle3": "Check settings",
+        "exampleField3": "`;setwelcome`\n\u200b",
+        "inline": true,
+        "image": "https://cdn.discordapp.com/attachments/974576242055577620/978583438720389140/unknown.png"
     }
 }

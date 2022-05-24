@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js")
 const welcomeSchema = require("../database/welcome-config.js")
 
-function returnEmbed(channel, member) {
+async function returnEmbed(channel, member) {
   const welcomeEmbed = new MessageEmbed()
     .setDescription(
       `**--------------------**\nWelcome to the **${member.guild.name}** community ${member.user.tag}! There are now *${member.guild.memberCount} members* in this server! Enjoy your stay here!\n**--------------------**\nCheck the <#973963670176563290> channel to gain full access to the server! 😁
@@ -13,7 +13,7 @@ function returnEmbed(channel, member) {
     )
     .setThumbnail(member.displayAvatarURL())
     .setColor("#FFFF00")
-  return channel.send({ embeds: [welcomeEmbed] })
+  return await channel.send({ embeds: [welcomeEmbed] })
 }
 
 module.exports = async (member) => {
@@ -40,5 +40,5 @@ module.exports = async (member) => {
     }
   }
 
-  returnEmbed(data[0], member)
+  await returnEmbed(data[0], member)
 }

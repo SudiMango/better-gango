@@ -1,9 +1,15 @@
 const { MessageEmbed } = require("discord.js")
+const dictionary = require("../features/dictionary.js")
 
 module.exports = {
   name: "rrauto",
   description: "auto reaction role cmd",
+  type: "admin",
   async execute(msg, args, client) {
+    let foundInText = await dictionary(msg)
+
+    if (foundInText) return
+
     if (!msg.member.permissions.has("ADMINISTRATOR"))
       return msg.reply("U don't have admin perms bozo 😂")
 

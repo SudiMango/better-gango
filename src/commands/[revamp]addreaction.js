@@ -1,7 +1,14 @@
+const dictionary = require("../features/dictionary.js")
+
 module.exports = {
-  name: "addreaction",
+  name: "rr",
   description: "manual reaction role cmd",
+  type: "admin",
   async execute(msg, args) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     if (!msg.member.permissions.has("ADMINISTRATOR"))
       return msg.reply("U don't have admin perms bozo 😂")
 

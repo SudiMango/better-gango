@@ -1,13 +1,19 @@
+const dictionary = require("../features/dictionary.js")
+
 module.exports = {
   name: "kick",
   description: "kick cmd",
   type: "admin",
-  async execute(msg, args) {
+  async execute(msg, args, client) {
+    let foundInText = await dictionary.FoundInText(msg)
+
+    if (foundInText) return
+
     if (!msg.member.permissions.has("KICK_MEMBERS"))
       return msg.reply("U don't have kick perms bozo 😂")
 
     if (args.length === 1) {
-      msg.reply("You didn't tell me who to kick bruh 💀")
+      await dictionary.AdvHelp(client, msg.channel, args[0], msg)
       return
     }
 
@@ -31,7 +37,7 @@ module.exports = {
         if (targetMember.permissions.has("ADMINISTRATOR"))
           return msg.reply("That person has admin, I can't kick them")
 
-        await targetMember.kick()
+        await targetMember.kick(kickReason)
         if (!kickReason) {
           return msg.reply(
             `${targetMember.user.tag} has been kicked. Reason: None`
@@ -54,7 +60,7 @@ module.exports = {
         if (targetMember.permissions.has("ADMINISTRATOR"))
           return msg.reply("That person has admin, I can't kick them")
 
-        await targetMember.kick()
+        await targetMember.kick(kickReason)
         if (!kickReason) {
           return msg.reply(
             `${targetMember.user.tag} has been kicked. Reason: None`
