@@ -45,7 +45,7 @@ module.exports = {
             {
               name: "Simple commands",
               value:
-                "List of simple commands that better gango offers. **Type `;{command name}` for more info about the command.**\nㅤ",
+                "List of simple commands that better gango offers. **Type `;help {command name}` for more info about the command.**\nㅤ",
               inline: false,
             },
             {
@@ -53,7 +53,11 @@ module.exports = {
               value: "Lets you access the better gango help docs.",
               inline: false,
             },
-            { name: ";ping", value: "Responds with pong.", inline: false },
+            {
+              name: ";ping",
+              value: "Check the bot's latency and the Discord API's latency.",
+              inline: false,
+            },
             { name: ";bing", value: "Responds with bong.", inline: false },
             { name: ";beep", value: "Responds with boop.\nㅤ", inline: false }
           )
@@ -83,6 +87,11 @@ module.exports = {
             {
               name: ";inspire",
               value: "Inspires you with an inspirational quote!",
+              inline: false,
+            },
+            {
+              name: ";demotivate",
+              value: "Demotivates you with an demotivational quote :(",
               inline: false,
             },
             {
@@ -163,22 +172,27 @@ module.exports = {
             },
             {
               name: ";unmute",
-              value: "Lets you unmute muted members of the server.\nㅤ",
+              value: "Lets you unmute muted members of the server.",
               inline: false,
             },
             {
               name: ";kick",
-              value: "Lets you kick members of the server.\nㅤ",
+              value: "Lets you kick members of the server.",
               inline: false,
             },
             {
               name: ";ban",
-              value: "Lets you ban members of the server.\nㅤ",
+              value: "Lets you ban members of the server.",
               inline: false,
             },
             {
               name: ";unban",
-              value: "Lets you unban banned members of the server.\nㅤ",
+              value: "Lets you unban banned members of the server.",
+              inline: false,
+            },
+            {
+              name: ";setwelcome",
+              value: "Send welcome messages to your server\nㅤ",
               inline: false,
             }
           )
@@ -204,7 +218,7 @@ module.exports = {
         let filter = (reaction, user) => user.id !== client.user.id
         let collector = newEmbed.createReactionCollector({
           filter,
-          time: 60000,
+          time: 120000,
         })
 
         collector.on("collect", function (reaction, user) {

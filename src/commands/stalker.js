@@ -14,17 +14,17 @@ module.exports = {
         break
       case 2:
         msg.reply(
-          "You need to provide the 2 more arguments *(eg. ;stalker 16 male Ethiopia @user)*"
+          "You need to provide all the proper arguments *(eg. ;stalker 16 male Ethiopia @user)*"
         )
         break
       case 3:
         msg.reply(
-          "You need to provide the 1 more arguments *(eg. ;stalker 16 male Ethiopia @user)*"
+          "You need to provide all the proper arguments *(eg. ;stalker 16 male Ethiopia @user)*"
         )
         break
       case 4:
         msg.reply(
-          "You need to provide the 1 more arguments *(eg. ;stalker 16 male Ethiopia @user)*"
+          "You need to provide all the proper arguments *(eg. ;stalker 16 male Ethiopia @user)*"
         )
         break
       case 5:
@@ -37,10 +37,11 @@ module.exports = {
         msg.channel.send(
           `${targetMember} So you are a ${args[1]} year old ${args[2]} living in ${args[3]} 😈`
         )
+        msg.delete()
         break
       default:
         msg.reply(
-          "You need to provide the 3 proper arguments *(eg. ;stalker 16 male Ethiopia @user)*"
+          "You need to provide all the proper arguments *(eg. ;stalker 16 male Ethiopia @user)*"
         )
         break
     }

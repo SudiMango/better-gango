@@ -19,7 +19,7 @@ module.exports = {
   },
 
   async execute(msg, args) {
-    let foundInText = await dictionary(msg)
+    let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return
 
