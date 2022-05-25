@@ -1,5 +1,5 @@
-const welcomeSchema = require("../database/welcome-config.js")
-const dictionary = require("../features/dictionary.js")
+const welcomeSchema = require("../../database/welcome-config.js")
+const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "setwelcome",

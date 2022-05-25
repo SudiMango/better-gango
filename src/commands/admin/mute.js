@@ -1,6 +1,6 @@
 const ms = require("ms")
-const schema = require("../database/guildConfig.js")
-const dictionary = require("../features/dictionary.js")
+const schema = require("../../database/guildConfig.js")
+const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "mute",

@@ -24,7 +24,7 @@ client.commands = new Collection()
 // Events
 
 // Client is ready
-client.on("ready", async () => {
+client.once("ready", async () => {
   ready(client)
 })
 

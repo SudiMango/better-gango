@@ -1,26 +1,26 @@
-const dictionary = require("../features/dictionary.js")
+const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
-  name: "kick",
-  description: "kick cmd",
+  name: "ban",
+  description: "ban cmd",
   type: "admin",
   async execute(msg, args, client) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return
 
-    if (!msg.member.permissions.has("KICK_MEMBERS"))
-      return msg.reply("U don't have kick perms bozo 😂")
-
     if (args.length === 1) {
       await dictionary.AdvHelp(client, msg.channel, args[0], msg)
       return
     }
 
-    let reasonTable = args.splice(2)
-    let kickReason = reasonTable.join(" ")
+    if (!msg.member.permissions.has("BAN_MEMBERS"))
+      return msg.reply("U don't have ban perms bozo 😂")
 
-    console.log(kickReason)
+    let reasonTable = args.splice(2)
+    let banReason = reasonTable.join(" ")
+
+    console.log(banReason)
 
     let target = args[1]
 
@@ -32,19 +32,19 @@ module.exports = {
         let new2 = new1.replace(">", "")
         let targetMember = await msg.guild.members.fetch(new2)
 
-        if (new2 === msg.author.id) return msg.reply("U wanna kick yourself 🤨")
+        if (new2 === msg.author.id) return msg.reply("U wanna ban yourself 🤨")
 
         if (targetMember.permissions.has("ADMINISTRATOR"))
-          return msg.reply("That person has admin, I can't kick them")
+          return msg.reply("That person has admin, I can't ban them")
 
-        await targetMember.kick(kickReason)
-        if (!kickReason) {
+        await targetMember.ban({ reason: banReason })
+        if (!banReason) {
           return msg.reply(
-            `${targetMember.user.tag} has been kicked. Reason: None`
+            `${targetMember.user.tag} has been banned. Reason: None`
           )
         } else {
           return msg.reply(
-            `${targetMember.user.tag} has been kicked. Reason: ${kickReason}`
+            `${targetMember.user.tag} has been banned. Reason: ${banReason}`
           )
         }
       } catch (err) {
@@ -55,19 +55,19 @@ module.exports = {
         let targetMember = await msg.guild.members.fetch(target)
 
         if (target === msg.author.id)
-          return msg.reply("U wanna kick yourself 🤨")
+          return msg.reply("U wanna ban yourself 🤨")
 
         if (targetMember.permissions.has("ADMINISTRATOR"))
-          return msg.reply("That person has admin, I can't kick them")
+          return msg.reply("That person has admin, I can't ban them")
 
-        await targetMember.kick(kickReason)
-        if (!kickReason) {
+        await targetMember.ban({ reason: banReason })
+        if (!banReason) {
           return msg.reply(
-            `${targetMember.user.tag} has been kicked. Reason: None`
+            `${targetMember.user.tag} has been banned. Reason: None`
           )
         } else {
           return msg.reply(
-            `${targetMember.user.tag} has been kicked. Reason: ${kickReason}`
+            `${targetMember.user.tag} has been banned. Reason: ${banReason}`
           )
         }
       } catch (err) {

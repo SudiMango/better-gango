@@ -1,4 +1,4 @@
-const dictionary = require("../features/dictionary.js")
+const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "ping",

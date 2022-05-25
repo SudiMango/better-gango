@@ -1,5 +1,5 @@
 const axios = require("axios")
-const dictionary = require("../features/dictionary.js")
+const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "demotivate",

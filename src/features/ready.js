@@ -2,6 +2,19 @@ const mongoose = require("mongoose")
 const colors = require("colors")
 const fs = require("fs")
 
+async function findCommands(directory, client) {
+  const files = fs.readdirSync(directory, { withFileTypes: true })
+  files.forEach((file) => {
+    const name = file.name
+    if (file.isDirectory()) {
+      findCommands(`${directory}/${name}`, client)
+    } else if (name.endsWith(".js")) {
+      const command = require(`../../${directory}/${name}`)
+      client.commands.set(command.name, command)
+    }
+  })
+}
+
 module.exports = async (client) => {
   // Connect to database
   try {
@@ -12,14 +25,7 @@ module.exports = async (client) => {
   }
 
   // Set commands
-  const commandFiles = fs
-    .readdirSync("src/commands")
-    .filter((file) => file.endsWith(".js"))
-
-  for (const file of commandFiles) {
-    const command = require(`../commands/${file}`)
-    client.commands.set(command.name, command)
-  }
+  findCommands("src/commands", client)
 
   // Set presence
   client.user.setPresence({
