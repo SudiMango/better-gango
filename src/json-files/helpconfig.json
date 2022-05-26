@@ -10,7 +10,7 @@
     },
     "bing": {
         "title": "**Command  ||  ;bing**\n----------------------------------------",
-        "usage": "**Usage:**\n- Have a little fun with this command where the bot responds to you!\n\u200b",
+        "usage": "**Usage:**\n- Responds with bong!\n\u200b",
         "exampleTitle": "Commands:",
         "exampleField": "`;bing`",
         "exampleTitle2": "\u200b",
@@ -19,7 +19,7 @@
     },
     "beep": {
         "title": "**Command  ||  ;beep**\n----------------------------------------",
-        "usage": "**Usage:**\n- Have a little fun with this command where the bot responds to you!\n\u200b",
+        "usage": "**Usage:**\n- Responds with boop!\n\u200b",
         "exampleTitle": "Commands:",
         "exampleField": "`;beep`",
         "exampleTitle2": "\u200b",
@@ -45,14 +45,14 @@
     },
     "8ball": {
         "title": "**Command  ||  ;8ball**\n----------------------------------------",
-        "usage": "**Usage:**\n- Use this command to make the bot answer a yes or no question for you!\n\u200b",
+        "usage": "**Usage:**\n- Make the bot answer a yes or no question for you!\n\u200b",
         "exampleTitle": "Commands:",
         "exampleField": "`;8ball {question}`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976409520035233822/unknown.png"
     },
     "stalker": {
         "title": "**Command  ||  ;stalker**\n----------------------------------------",
-        "usage": "**Usage:**\n- Creep someone out 👀\n\u200b",
+        "usage": "**Usage:**\n- Creep someone out by telling them their age, gender, and living place anonymously 👀\n\u200b",
         "exampleTitle": "Commands:",
         "exampleField": "`;stalker {age} {gender} {place} {@user}`\n\u200b",
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/976410195225870346/unknown.png"
@@ -69,7 +69,7 @@
 
     "prefix": {
         "title": "**Command  ||  ;prefix**\n----------------------------------------",
-        "usage": "**Usage:**\n- Check the prefix for this bot\n- Change prefix of of the bot\n\u200b",
+        "usage": "**Usage:**\n- Check the prefix for this bot\n- Change prefix of the bot\n\u200b",
         "exampleTitle": "Commands:",
         "exampleField": "`;prefix`",
         "exampleTitle2": "\u200b",
@@ -116,7 +116,7 @@
     },
     "ban": {
         "title": "**Command  ||  ;ban**\n----------------------------------------",
-        "usage": "**Usage:**\n- Ban members in server\n\u200b",
+        "usage": "**Usage:**\n- Ban members from server\n\u200b",
         "exampleTitle": "Commands:",
         "exampleField": "`;ban {@user/userID}`",
         "exampleTitle2": "\u200b",

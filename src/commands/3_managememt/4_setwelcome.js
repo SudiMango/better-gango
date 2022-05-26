@@ -3,7 +3,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "setwelcome",
-  description: "setwelcome message",
+  description: "Send welcome message whenever new member joins",
+  type: "Management",
   async execute(msg, args) {
     let foundInText = await dictionary.FoundInText(msg)
 

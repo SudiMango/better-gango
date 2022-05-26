@@ -4,7 +4,7 @@ const dictionary = require("../../features/dictionary.js")
 module.exports = {
   name: "embed",
   description: "embed cmd",
-  type: "admin",
+  type: "Management",
   async execute(msg, args, author) {
     let foundInText = await dictionary(msg)
 

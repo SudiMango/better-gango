@@ -33,7 +33,6 @@ client.on("guildMemberAdd", async (member) => {
   welcomeMsg(member)
 })
 
-// Client is ready
 client.on("messageCreate", async (msg) => {
   message(msg, client)
 })

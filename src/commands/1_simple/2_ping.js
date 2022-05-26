@@ -2,7 +2,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "ping",
-  description: "ping cmd",
+  description: "Check the bot's latency and the Discord API's latency",
+  type: "Simple",
   async execute(msg, args, client) {
     let foundInText = await dictionary.FoundInText(msg)
 

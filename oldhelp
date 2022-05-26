@@ -1,5 +1,6 @@
 const { MessageEmbed } = require("discord.js")
 const dictionary = require("../../features/dictionary.js")
+const fs = require("fs")
 
 module.exports = {
   name: "help",

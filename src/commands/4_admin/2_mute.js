@@ -4,7 +4,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "mute",
-  description: "mute cmd",
+  description: "Mute people in server",
+  type: "Admin",
   async execute(msg, args, muteRole, client) {
     let foundInText = await dictionary.FoundInText(msg)
 

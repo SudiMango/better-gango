@@ -3,8 +3,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "bannedwords",
-  description: "banned words cmd",
-  type: "admin",
+  description: "Ban certain words in you server",
+  type: "Management",
   async execute(msg, args, client, bannedWords) {
     let foundInText = await dictionary.FoundInText(msg)
 

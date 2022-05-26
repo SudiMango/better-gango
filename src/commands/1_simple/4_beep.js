@@ -2,8 +2,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "beep",
-  description: "beep cmd",
-  type: "simple",
+  description: "Responds with boop",
+  type: "Simple",
   async execute(msg, args) {
     let foundInText = await dictionary.FoundInText(msg)
 

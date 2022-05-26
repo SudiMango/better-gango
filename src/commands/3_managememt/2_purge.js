@@ -2,7 +2,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "purge",
-  description: "purge cmd",
+  description: "Bulk delete messages (upto 100 at a time)",
+  type: "Management",
   async execute(msg, args, client) {
     let foundInText = await dictionary.FoundInText(msg)
 

@@ -2,7 +2,9 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "stalker",
-  description: "stalker cmd",
+  description:
+    "Creep someone out by telling them their age, gender, and living place anonymously 👀",
+  type: "Advanced",
   async execute(msg, args, client) {
     let foundInText = await dictionary.FoundInText(msg)
 

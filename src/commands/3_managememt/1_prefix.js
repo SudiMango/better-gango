@@ -3,8 +3,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "prefix",
-  description: "Check and change bot prefix",
-
+  description: "Check and change bot's prefix",
+  type: "Management",
   async execute(msg, args, prefix) {
     let foundInText = await dictionary.FoundInText(msg)
 

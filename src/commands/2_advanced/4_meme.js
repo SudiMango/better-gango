@@ -4,7 +4,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "meme",
-  description: "meme cmd",
+  description: "Get a random meme from the r/dankmemes subreddit!",
+  type: "Advanced",
   async execute(msg, args) {
     let foundInText = await dictionary.FoundInText(msg)
 

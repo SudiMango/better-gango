@@ -3,7 +3,7 @@ const dictionary = require("../../features/dictionary.js")
 module.exports = {
   name: "rr",
   description: "manual reaction role cmd",
-  type: "admin",
+  type: "Management",
   async execute(msg, args) {
     let foundInText = await dictionary.FoundInText(msg)
 

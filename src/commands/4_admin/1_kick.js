@@ -2,8 +2,8 @@ const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
   name: "kick",
-  description: "kick cmd",
-  type: "admin",
+  description: "Kick members in server",
+  type: "Admin",
   async execute(msg, args, client) {
     let foundInText = await dictionary.FoundInText(msg)
 

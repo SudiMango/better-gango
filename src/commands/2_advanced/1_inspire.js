@@ -2,19 +2,18 @@ const axios = require("axios")
 const dictionary = require("../../features/dictionary.js")
 
 module.exports = {
-  name: "demotivate",
-  description: "demotivate cmd",
-  type: "advanced",
-
+  name: "inspire",
+  description: "Inspire yourself with an inspirational quote sent by the bot!",
+  type: "Advanced",
   func: function () {
     return axios
-      .get("https://demotivational-quotes-api.herokuapp.com/api/quotes/random")
+      .get("https://zenquotes.io/api/random")
       .then((res) => {
         return res.data
       })
 
       .then((res) => {
-        return res["quote"] + " - " + res["author"]
+        return res[0]["q"] + " - " + res[0]["a"]
       })
   },
 
