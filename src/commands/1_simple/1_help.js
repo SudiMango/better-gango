@@ -212,35 +212,3 @@ module.exports = {
     }
   },
 }
-
-//\u200B
-//ㅤ
-
-// .then(newmessage => {
-//       setTimeout(function() {
-//         newmessage.edit({ embeds: [secondPage] })
-//       }, 3000)
-//     })
-
-// const commands = fs
-//   .readdirSync(`src/commands/${dir}`)
-//   .filter((file) => file.endsWith(".js"))
-
-// const cmds = commands.map((command) => {
-//   let file = require(`../../commands/${dir}/${command}`)
-
-//   if (!file.name) return "No command name."
-
-//   let name = file.name
-
-//   return `\`${name}\``
-// })
-
-// let data = new Object()
-
-// data = {
-//   name: dir.split("_")[1],
-//   commands: cmds.length === 0 ? "In progress." : cmds.join(" "),
-// }
-
-// categories.push(data)

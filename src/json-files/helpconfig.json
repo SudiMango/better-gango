@@ -152,5 +152,12 @@
         "exampleField3": "`;setwelcome`\n\u200b",
         "inline": true,
         "image": "https://cdn.discordapp.com/attachments/974576242055577620/978583438720389140/unknown.png"
+    },
+    "rr": {
+        "title": "**Command  ||  ;rr**\n----------------------------------------",
+        "usage": "**Usage:**\n- Add reactions to messages\n- Add reaction roles to messages\n\u200b",
+        "exampleTitle": "Commands:",
+        "exampleField": "`;rr {#channel/channelID} {messageID} {emoji} {@role/roleID}`\n\u200b",
+        "image": ""
     }
 }

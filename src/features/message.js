@@ -151,6 +151,9 @@ module.exports = async (msg, client) => {
       case "unban":
         client.commands.get("unban").execute(msg, args, client)
         break
+      case "rr":
+        client.commands.get("rr").execute(msg, args, client)
+        break
     }
   } catch (error) {
     // Catch error
