@@ -35,7 +35,19 @@ module.exports = {
           if (targetChannel) {
             try {
               let newMsg = await targetChannel.messages.fetch(messageID)
-              if (newMsg) {
+              let newReaction = null
+              let goAhead = true
+
+              newMsg.reactions.cache.filter((reaction) => {
+                newReaction = reaction.emoji.name
+                console.log(newReaction)
+                if (newReaction === emoji) {
+                  msg.reply("reaction already there")
+                  goAhead = false
+                }
+              })
+
+              if (newMsg && goAhead === true) {
                 if (role.startsWith("<@&") && role.endsWith(">")) {
                   try {
                     let role1 = role.replace("<@&", "")
