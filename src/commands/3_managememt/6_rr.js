@@ -1,4 +1,5 @@
 const dictionary = require("../../features/dictionary.js")
+const rrConfig = require("../../database/rrConfig.js")
 
 module.exports = {
   name: "rr",
