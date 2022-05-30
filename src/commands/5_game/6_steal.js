@@ -19,7 +19,7 @@ module.exports = {
       let msgCount = userData.msgCount
       if (parseInt(msgCount) === 1) {
         return msg.reply(
-          "Hold your horses! You can only steal every 5 minutes!"
+          "Hold your horses! You can only steal every 3 minutes!"
         )
       } else {
         msgCount++
@@ -34,7 +34,7 @@ module.exports = {
       setTimeout(() => {
         usersMap.delete(msg.author.id)
         console.log("removed from map")
-      }, 500000)
+      }, 180000)
     }
 
     if (args.length === 2) {
@@ -109,7 +109,7 @@ module.exports = {
               })
 
             return msg.reply(
-              `Wow! You managed to steal ${randomNum} mangoes from ${target}`
+              `Wow! You managed to steal **${randomNum} mangoes** from ${target}`
             )
           } catch (err) {
             console.log(err)

@@ -42,7 +42,7 @@ module.exports = {
         `Your dad called you a disappointment and gave u **${randomNum} mangoes**`,
         `A street begger thought u were so broke that he gave u **${randomNum} mangoes** 😂`,
         `Your mom gave u **${randomNum} mangoes** and then proceeded to call you a mistake 😭`,
-        `A poor lady on the street gave u her last **${randomNum}** mangoes** coz yo broke ass wouldn't stop bugging her`,
+        `A poor lady on the street gave u her last **${randomNum} mangoes** coz yo broke ass wouldn't stop bugging her`,
       ]
       let result = Math.floor(Math.random() * responses.length)
 

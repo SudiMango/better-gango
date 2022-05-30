@@ -48,7 +48,7 @@ module.exports = {
           console.log(err)
         })
 
-      return msg.reply(`Deposited ${amount} mangoes to bank`)
+      return msg.reply(`Deposited **${amount} mangoes** to bank`)
     } catch (err) {
       console.log(err)
     }

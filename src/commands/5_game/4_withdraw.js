@@ -41,7 +41,7 @@ module.exports = {
           console.log(err)
         })
 
-      return msg.reply(`Withdrew ${amount} mangoes to wallet`)
+      return msg.reply(`Withdrew **${amount} mangoes** to wallet`)
     } catch (err) {
       console.log(err)
     }

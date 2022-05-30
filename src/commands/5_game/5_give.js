@@ -81,7 +81,7 @@ module.exports = {
             })
 
           return msg.reply(
-            `Nice! You just gave ${target} **${amount} mangoes**!`
+            `Nice! You just gave ${target} **${amount} mangoes!**`
           )
         } catch (err) {
           console.log(err)
