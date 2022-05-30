@@ -15,10 +15,12 @@ function sendEmbed(author, configFile, msg) {
     .setTimestamp()
     .setFooter(`${footers[result]}`)
   if (!configFile) {
-    embed.setDescription(`**Wallet:** 20🥭\n**Bank:** 0🥭`)
+    embed.setDescription(`**Wallet:** 20🥭\n**Bank:** 0/500🥭\n**Net:** 20🥭`)
   } else {
     embed.setDescription(
-      `**Wallet:** ${configFile.Mangoes}🥭\n**Bank:** ${configFile.Bank}🥭`
+      `**Wallet:** ${configFile.Mangoes}🥭\n**Bank:** ${configFile.Bank}/${
+        configFile.BankLimit
+      }🥭\n**Net:** ${configFile.Mangoes + configFile.Bank}🥭`
     )
   }
   msg.channel.send({ embeds: [embed] })
@@ -49,11 +51,14 @@ module.exports = {
           const configFile = await currencySchema.findOne({ UserID: new2 })
           sendEmbed(targetMember, configFile, msg)
         } catch (err) {
+          msg.reply("Please tag a member in this server.")
           console.log(err)
         }
       } else {
         msg.reply("Please tag a member in this server.")
       }
+    } else {
+      msg.reply("that aint a command bruh 💀")
     }
   },
 }

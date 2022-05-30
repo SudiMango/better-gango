@@ -74,6 +74,7 @@ module.exports = async (msg, client) => {
         ServerID: msg.guild.id,
         Mangoes: 20,
         Bank: 0,
+        BankLimit: 500,
       })
       profile.save()
     }
@@ -94,6 +95,10 @@ module.exports = async (msg, client) => {
   // Get command
   let command = args[0].toLowerCase()
   console.log(command)
+
+  // const cmd =
+  //   client.comamnds.get(command) ||
+  //   client.commands.find((a) => a.aliases && a.aliases.includes(cmd))
 
   // Calling commands
   try {
@@ -138,6 +143,18 @@ module.exports = async (msg, client) => {
         break
       case "beg":
         client.commands.get("beg").execute(msg, args)
+        break
+      case "deposit":
+        client.commands.get("deposit").execute(msg, args)
+        break
+      case "withdraw":
+        client.commands.get("withdraw").execute(msg, args)
+        break
+      case "give":
+        client.commands.get("give").execute(msg, args)
+        break
+      case "steal":
+        client.commands.get("steal").execute(msg, args)
         break
 
       // Calling admin commands

@@ -17,6 +17,10 @@ const currencySchema = new mongoose.Schema({
   Bank: {
     type: Number,
   },
+  BankLimit: {
+    type: Number,
+    default: 500,
+  },
 })
 
 module.exports = mongoose.model("currencySchema", currencySchema)
