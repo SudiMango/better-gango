@@ -3,7 +3,7 @@ const rrConfig = require("../../database/rrConfig.js")
 
 module.exports = {
   name: "rr",
-  description: "manual reaction role cmd",
+  description: "Add reaction roles to messages",
   type: "Management",
   async execute(msg, args, client) {
     let foundInText = await dictionary.FoundInText(msg)
@@ -58,6 +58,23 @@ module.exports = {
                       try {
                         let reacted = newMsg.react(emoji)
                         if (reacted) {
+                          await rrConfig
+                            .findOneAndUpdate(
+                              { GuildID: msg.guildId },
+                              {
+                                $push: {
+                                  ChannelID: new2,
+                                  MessageID: messageID,
+                                  Emoji: emoji,
+                                  RoleID: role2,
+                                },
+                              },
+                              { upsert: true }
+                            )
+                            .catch((err) => {
+                              console.log(err)
+                            })
+
                           client.on(
                             "messageReactionAdd",
                             async (reaction, user) => {

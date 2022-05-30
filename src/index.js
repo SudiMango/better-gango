@@ -3,6 +3,7 @@ const { Client, Collection, Intents } = require("discord.js")
 const welcomeMsg = require("./features/welcomeMessage.js")
 const ready = require("./features/ready.js")
 const message = require("./features/message.js")
+const guildMemberAdd = require("./features/guildMemberAdd.js")
 require("dotenv").config()
 
 // Client
@@ -31,6 +32,7 @@ client.once("ready", async () => {
 // Member joining
 client.on("guildMemberAdd", async (member) => {
   welcomeMsg(member)
+  guildMemberAdd(client, member)
 })
 
 client.on("messageCreate", async (msg) => {

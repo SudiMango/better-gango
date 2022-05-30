@@ -1,4 +1,5 @@
 const schema = require("../database/guildConfig.js")
+const currencySchema = require("../database/currencySchema.js")
 
 async function funnyServerConfigs(msg) {
   let target = msg.mentions.users.first()
@@ -64,6 +65,22 @@ module.exports = async (msg, client) => {
   }
   if (!msg.content.startsWith(prefix)) return
 
+  let profileData
+  try {
+    profileData = await currencySchema.findOne({ UserID: msg.author.id })
+    if (!profileData) {
+      let profile = await currencySchema.create({
+        UserID: msg.author.id,
+        ServerID: msg.guild.id,
+        Mangoes: 20,
+        Bank: 0,
+      })
+      profile.save()
+    }
+  } catch (err) {
+    console.log(err)
+  }
+
   // Check for muted role
   let muteRole = ""
   if (configFile && configFile.MuteRole) {
@@ -113,6 +130,14 @@ module.exports = async (msg, client) => {
         break
       case "prefix":
         client.commands.get("prefix").execute(msg, args, prefix)
+        break
+
+      // Calling game commands
+      case "bal":
+        client.commands.get("bal").execute(msg, args)
+        break
+      case "beg":
+        client.commands.get("beg").execute(msg, args)
         break
 
       // Calling admin commands
