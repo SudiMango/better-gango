@@ -4,7 +4,7 @@ module.exports = {
   name: "kick",
   description: "Kick members in server",
   type: "Admin",
-  async execute(msg, args, client) {
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

@@ -5,7 +5,7 @@ module.exports = {
   description:
     "Creep someone out by telling them their age, gender, and living place anonymously 👀",
   type: "Advanced",
-  async execute(msg, args, client) {
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

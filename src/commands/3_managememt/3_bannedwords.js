@@ -5,7 +5,8 @@ module.exports = {
   name: "bannedwords",
   description: "Ban certain words in you server",
   type: "Management",
-  async execute(msg, args, client, bannedWords) {
+  aliases: ["bw"],
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

@@ -4,7 +4,7 @@ module.exports = {
   name: "ping",
   description: "Check the bot's latency and the Discord API's latency",
   type: "Simple",
-  async execute(msg, args, client) {
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

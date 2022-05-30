@@ -5,7 +5,8 @@ module.exports = {
   name: "setwelcome",
   description: "Send welcome message whenever new member joins",
   type: "Management",
-  async execute(msg, args) {
+  aliases: ["sw"],
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

@@ -76,7 +76,7 @@ module.exports = {
   name: "help",
   description: "Lets you access the better gango help docs",
   type: "Simple",
-  async execute(msg, args, client) {
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

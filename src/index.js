@@ -41,14 +41,3 @@ client.on("messageCreate", async (msg) => {
 
 // Login
 client.login(process.env.TOKEN)
-
-// Old method
-// try {
-//   client.commands
-//     .get(msg.content.substring(1).split(" ")[0])
-//     .execute(msg, args, client, bannedWords)
-// } catch (error) {
-//   // Catch error
-//   msg.reply("an unknown error has occured")
-//   console.log(error)
-// }

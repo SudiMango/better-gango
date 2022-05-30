@@ -27,10 +27,11 @@ function sendEmbed(author, configFile, msg) {
 }
 
 module.exports = {
-  name: "bal",
+  name: "balance",
   description: "Check user balance",
   type: "Game",
-  async execute(msg, args) {
+  aliases: ["bal", "bl"],
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

@@ -5,7 +5,7 @@ module.exports = {
   name: "prefix",
   description: "Check and change bot's prefix",
   type: "Management",
-  async execute(msg, args, prefix) {
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

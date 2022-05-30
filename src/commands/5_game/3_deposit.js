@@ -5,7 +5,8 @@ module.exports = {
   name: "deposit",
   description: "Deposit mangoes from your wallet to your bank",
   type: "Game",
-  async execute(msg, args) {
+  aliases: ["dep", "depo", "dp", "dps"],
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

@@ -4,7 +4,7 @@ module.exports = {
   name: "8ball",
   description: "Make the bot answer a yes or no question for you!",
   type: "Advanced",
-  async execute(msg, args, client) {
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

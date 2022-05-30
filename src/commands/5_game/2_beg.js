@@ -6,7 +6,7 @@ module.exports = {
   name: "beg",
   description: "Beg for mangoes u broke ahh mfer",
   type: "Game",
-  async execute(msg, args) {
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return

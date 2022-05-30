@@ -6,7 +6,7 @@ module.exports = {
   name: "meme",
   description: "Get a random meme from the r/dankmemes subreddit!",
   type: "Advanced",
-  async execute(msg, args) {
+  async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)
 
     if (foundInText) return
