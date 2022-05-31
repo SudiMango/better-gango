@@ -4,7 +4,7 @@ const usersMap = new Map()
 
 module.exports = {
   name: "crime",
-  description: "Commit crimes to disappoit your parents even more 😔",
+  description: "Commit crimes to get mass amounts of mangoes!",
   type: "Game",
   async execute(msg, args, client, prefix, bannedWords, muteRole) {
     let foundInText = await dictionary.FoundInText(msg)

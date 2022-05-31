@@ -109,7 +109,7 @@ module.exports = {
             "React with the emoji below to access the next page\nㅤ"
           )
           .setFooter({
-            text: "Page 1/6",
+            text: "Page 1/7",
             iconURL:
               "https://cdn.discordapp.com/attachments/972777349105991704/973143133263134770/imcool.jpeg",
           })
@@ -165,6 +165,16 @@ module.exports = {
           dirData[5],
           dirIndex[5]
         )
+        const seventhEmbed = new MessageEmbed()
+        makeEmbed(
+          seventhEmbed,
+          7,
+          dirData[5],
+          dirIndex[5],
+          dirData.length,
+          dirData[6],
+          dirIndex[6]
+        )
 
         const embedTable = [
           firstEmbed,
@@ -173,6 +183,7 @@ module.exports = {
           fourthEmbed,
           fifthEmbed,
           sixthEmbed,
+          seventhEmbed,
         ]
         let i = 0
 
