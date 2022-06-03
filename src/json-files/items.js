@@ -35,4 +35,14 @@ module.exports = [
     title: "🔐 Padlock --> 500 mangoes || *Protection*",
     description: "Protect the mangoes in your bank from getting robbed!\nㅤ",
   },
+  {
+    item: "betterluck",
+    price: 720,
+    type: "Luck",
+    name: "Better Luck",
+    emoji: "❤️‍🔥",
+    title: "❤️‍🔥 Better Luck --> 720 mangoes || *Luck*",
+    description:
+      "Have better luck for 1 day when stealing/robbing/commiting a crime!\nㅤ",
+  },
 ]

@@ -42,7 +42,7 @@ module.exports = {
 
     if (args.length === 1) {
       inventory.findOne({ UserID: msg.author.id }, async (err, data) => {
-        if (!data)
+        if (!data || !Object.keys(data.Inventory)[0])
           return msg.reply(
             "U literally got nothing in ur inventory, just stop checking."
           )
@@ -65,7 +65,7 @@ module.exports = {
           let targetMember = await msg.guild.members.fetch(new2)
 
           inventory.findOne({ UserID: new2 }, async (err, data) => {
-            if (!data)
+            if (!data || !Object.keys(data.Inventory)[0])
               return msg.reply(
                 "They literally got nothing in their inventory 😂"
               )
